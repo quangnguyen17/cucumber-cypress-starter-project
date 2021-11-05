@@ -6,8 +6,8 @@
 
 - Clone and `cd` into the repo, run `npm install` to install project's dependencies.
 - To run the example tests:
-  - With [Cypress](https://www.cypress.io/) open: `npm run test:e2e`.
-  - For CI/CD pipeline: `npm run test:e2e:ci`.
+  - With [Cypress](https://www.cypress.io/) open: `npm run cy`.
+  - For CI/CD pipeline: `npm run cy:ci`.
 
 ### Folder Structure:
 

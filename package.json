@@ -2,8 +2,8 @@
   "name": "cypress-cucumber-demo",
   "version": "1.0.0",
   "scripts": {
-    "test:e2e:ci": "cypress run",
-    "test:e2e": "./node_modules/.bin/cypress open"
+    "cy": "cypress run",
+    "cy:ci": "./node_modules/.bin/cypress open"
   },
   "devDependencies": {
     "@cypress/browserify-preprocessor": "^3.0.1",
