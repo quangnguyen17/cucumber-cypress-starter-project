@@ -11,8 +11,8 @@
 
 ### Folder Structure:
 
-- Tests: `cypress/integration/tests`.
-- Step implementations: `cypress/integration/common`.
+- Tests: `cypress/tests`.
+- Step implementations: `cypress/tests/common`.
 - Cypress config file: `cypress.json`.
 
 ### Dev Links & Resources:
