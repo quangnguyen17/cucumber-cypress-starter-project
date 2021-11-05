@@ -1,4 +1,4 @@
-Feature: Sign In Form
+Feature: Sign In
   Background:
     When I visit Rivian "account" page
     And I see "Sign In" text
