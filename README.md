@@ -32,6 +32,11 @@ Feature: Google
     Then I see Google image
 ```
 
+- `Feature`: Name of the feature that want to test.
+- `Background`: Where you can define all the actions before each scenario, similar to the `BeforeEach` hook in Cypress.
+- `Scenario`: Equivalent to the `it` hook in Cypress. It defines all the subsequent tests in your **feature** file.
+- `When`, `Then` are ones of the [Gherkin Keywords](https://cucumber.io/docs/gherkin/reference/#keywords) that indidate the beginning of a step, phrase, or an assertion (Assertion statements usually start with the `Then` keyword; in this scenario, `Then I see Google image`).
+
 2. Write your step definitions in code that turn your **feature** files into actions
    - In `cypress/common` folder, this would be where all of your testing code should live.
    - Create an empty `.ts` file in the folder with the following content:
@@ -44,7 +49,7 @@ When('I visit Google homepage', () => cy.visit('https://www.google.com/'))
 Then('I see Google image', () => cy.get('image[alt="Google"]').should('be.visible'))
 ```
 
-## Learning Resources:
+## Learning Resources on Cucumber:
 
 - [10 Minute Tutorial](https://cucumber.io/docs/guides/10-minute-tutorial/) on Cucumber.
 - Learn more about the [Gherkin Syntax](https://cucumber.io/docs/gherkin/reference/).
