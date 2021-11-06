@@ -1,6 +1,6 @@
 # cypress-cucumber-demo
 
-- This project will show you how to write [Cypress](https://www.cypress.io/) E2E tests with [Cucumber](https://cucumber.io/) & [Typescript](https://www.typescriptlang.org/).
+- This project will show you how to write [Cypress](https://www.cypress.io/) E2E tests using [Cucumber](https://cucumber.io/) & [Typescript](https://www.typescriptlang.org/).
 - It simplifies the traditional method of writing tests by breaking it down into 2 smaller parts.
   1. Defining your test in the a `.feature` file. A **feature** file is an entry point to the Cucumber tests. This is a file where you will describe your tests in Descriptive language (Like English) by using the [Gherkin Syntax](https://cucumber.io/docs/gherkin/). A **feature** file can contain a scenario or can contain many scenarios in a single **feature** file but it usually contains a list of scenarios.
   2. After your **feature** files have been created, you can now begin to write code here that turns the phrases in your `.feature` files into concrete actions.
