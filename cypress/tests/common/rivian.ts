@@ -1,6 +1,4 @@
-import { And, When, Given, Then } from 'cypress-cucumber-preprocessor/steps'
-
-Given('I visit {string}', (url: string) => cy.visit(url))
+import { And, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
 When('I click on {string} link', (text: string) => cy.get('[data-testid=nav-link]').contains(text).click())
 

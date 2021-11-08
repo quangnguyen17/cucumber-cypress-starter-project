@@ -1,5 +1,7 @@
-import { Then, And } from 'cypress-cucumber-preprocessor/steps'
+import { Then, And, Given } from 'cypress-cucumber-preprocessor/steps'
 
-Then('I see Google logo', () => cy.get(`img[alt="Google"]`).should('be.visible'))
+Given('I visit {string}', (url: string) => cy.visit(url))
 
-And('I see search bar', () => cy.get(`input[title="Search"]`).should('be.visible'))
+And('I see a search bar', () => cy.get(`input[title="Search"]`).should('be.visible'))
+
+Then('I see a Google search button', () => cy.get(`input[value="Google Search"]`).should('be.visible'))
