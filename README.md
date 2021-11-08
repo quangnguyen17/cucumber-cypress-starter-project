@@ -14,7 +14,7 @@
 
 ## Folder Structure:
 
-- Tests: `cypress/tests`.
+- Tests (here's where all your test **.feature** files should go): `cypress/tests`.
 - Step implementations in code: `cypress/tests/common`.
 - Cypress config file: `cypress.json`.
 
