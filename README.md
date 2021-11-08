@@ -36,16 +36,16 @@ Feature: Google
 - `Feature`: Name of the feature that want to test.
 - `Background`: Where you can define all the actions before each scenario, similar to the `BeforeEach` hook in Cypress.
 - `Scenario`: Equivalent to the `it` or `test` hook in Cypress. It defines all the subsequent tests in your `.feature` file.
-- `Givem`, `When`, `Then`: [Gherkin Keywords](https://cucumber.io/docs/gherkin/reference/#keywords) that indidate the beginning of a step, phrase, or an assertion.
+- `Givem`, `And`, `Then`: [Gherkin Keywords](https://cucumber.io/docs/gherkin/reference/#keywords) that indidate the beginning of a step, phrase, or an assertion.
 
 2. Write your step definitions in code that turn your `.feature` files into actions
    - In `cypress/common` folder, this would be where all the code for parsing your `.feature` files should be.
    - Create a `google.ts` file in the folder with the following content:
 
 ```typescript
-import { When, Then, And } from 'cypress-cucumber-preprocessor/steps'
+import { Given, Then, And } from 'cypress-cucumber-preprocessor/steps'
 
-When('I visit {string}', (url: string) => cy.visit(url))
+Given('I visit {string}', (url: string) => cy.visit(url))
 
 Then('I see Google logo', () => cy.get(`img[alt="Google"]`).should('be.visible'))
 
