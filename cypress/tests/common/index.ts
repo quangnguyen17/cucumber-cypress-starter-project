@@ -1,13 +1,9 @@
-import { And, When, Given } from 'cypress-cucumber-preprocessor/steps'
+import { And, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
-When('I click on {string} button', (button: string) => cy.get(`[data-testid=${button}]`).click())
+When('I visit {string}', (url: string) => cy.visit(url))
 
-When('I type {string} in {string} input field', (text: string, input: string) => cy.get(`[data-testid=${input}]`).type(text))
+When('I click on {string} link', (text: string) => cy.get('[data-testid=nav-link]').contains(text).click())
 
-Given('{string} input field is blank', (field: string) => cy.get(`[data-testid=${field}]`).should('be.empty'))
-
-And('I see {string} form', (form: string) => cy.get(form).should('be.visible'))
-
-And('I see {string} button', (button: string) => cy.get(button).should('be.visible'))
+Then('I am redirected to {string} page', (route: string) => cy.url().should('include', route))
 
 And('I see {string} text', (text: string) => cy.contains(text))

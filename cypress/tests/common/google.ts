@@ -1,6 +1,4 @@
-import { When, Then, And } from 'cypress-cucumber-preprocessor/steps'
-
-When('I visit {string}', (url: string) => cy.visit(url))
+import { Then, And } from 'cypress-cucumber-preprocessor/steps'
 
 Then('I see Google logo', () => cy.get(`img[alt="Google"]`).should('be.visible'))
 
