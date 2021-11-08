@@ -18,7 +18,7 @@
 - Step implementations in code: `cypress/tests/common`.
 - Cypress config file: `cypress.json`.
 
-## How to write Cypress/Cucumber tests:
+## Cypress/Cucumber E2E Tests:
 
 #### Example #1:
 
