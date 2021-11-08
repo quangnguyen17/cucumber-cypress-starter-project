@@ -1,20 +1,12 @@
 Feature: Home
   Background:
-    When I visit Rivian "/" page
+    When I visit "https://rivian.com/"
 
-  Scenario Outline: I see <text> text
-    Then I see "<text>" text
+  Scenario: I see the following text on Rivian Home page
+    Then I see "INTRODUCING" text
+    And I see "Forever" text
+    And I see "Our contribution to the planet" text
 
-    Examples:
-      | text                            |
-      | INTRODUCING                     |
-      | Forever                         |
-      | Our contribution to the planet. |
-
-  Scenario Outline: I see <button> button
-    Then I see '<selector>' button
-
-    Examples:
-      | button               | selector                                                                    |
-      | Learn More           | .StyledContent--1t5q8k7 > [data-testid="Forever-Learn More-overlay-button"] |
-      | Hambuger Menu Button | .StyledHamburgerMenuButton--1jzuubo                                         |
+  Scenario: I see the following buttons on Rivian Home page
+    Then I see '.StyledContent--1t5q8k7 > [data-testid="Forever-Learn More-overlay-button"]' button
+    And I see ".StyledHamburgerMenuButton--1jzuubo" button

@@ -9,7 +9,7 @@
 
 - Clone and `cd` into the repo, run `npm install` to install project's dependencies.
 - To run the example tests:
-  - With [Cypress](https://www.cypress.io/) open: `npm run cy`.
+  - With [Cypress](https://www.cypress.io/) GUI: `npm run cy`.
   - For CI/CD pipeline: `npm run cy:ci`.
 
 ## Folder Structure:
@@ -26,27 +26,30 @@
 ```feature
 Feature: Google
   Background:
-    When I visit Google homepage
+    When I visit "https://www.google.com/"
 
-  Scenario: I see Google logo
-    Then I see Google image
+  Scenario: I see Google logo and search bar
+    Then I see Google logo
+    And I see search bar
 ```
 
 - `Feature`: Name of the feature that want to test.
 - `Background`: Where you can define all the actions before each scenario, similar to the `BeforeEach` hook in Cypress.
-- `Scenario`: Equivalent to the `it` hook in Cypress. It defines all the subsequent tests in your **feature** file.
-- `When`, `Then`: [Gherkin Keywords](https://cucumber.io/docs/gherkin/reference/#keywords) that indidate the beginning of a step, phrase, or an assertion (Assertion statements usually start with the `Then` keyword; in this scenario, `Then I see Google image`).
+- `Scenario`: Equivalent to the `it` or `test` hook in Cypress. It defines all the subsequent tests in your `.feature` file.
+- `When`, `Then`: [Gherkin Keywords](https://cucumber.io/docs/gherkin/reference/#keywords) that indidate the beginning of a step, phrase, or an assertion.
 
-2. Write your step definitions in code that turn your **feature** files into actions
-   - In `cypress/common` folder, this would be where all of your testing code should live.
-   - Create an empty `.ts` file in the folder with the following content:
+2. Write your step definitions in code that turn your `.feature` files into actions
+   - In `cypress/common` folder, this would be where all the code for parsing your `.feature` files should be.
+   - Create a `google.ts` file in the folder with the following content:
 
 ```typescript
 import { When, Then } from 'cypress-cucumber-preprocessor/steps'
 
-When('I visit Google homepage', () => cy.visit('https://www.google.com/'))
+When('I visit {string}', (url: string) => cy.visit(url))
 
-Then('I see Google image', () => cy.get('image[alt="Google"]').should('be.visible'))
+Then('I see Google logo', () => cy.get(`img[alt="Google"]`).should('be.visible'))
+
+Then('I see search bar', () => cy.get(`input[title="Search"]`).should('be.visible'))
 ```
 
 ## Learning Resources on Cucumber:
