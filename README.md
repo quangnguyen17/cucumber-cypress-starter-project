@@ -1,6 +1,6 @@
 # cypress-cucumber-starter-project
 
-Starter project for UI end-to-end testing with Cypress and Cucumber using Typescript
+Starter project for UI end-to-end testing with Cypress and Cucumber using Typescript.
 
 1. Write your tests as scenarios in the a `.feature` file. A `.feature` file is an entry point to the Cucumber tests. This is a file where you will describe your tests in Descriptive language (Like English) by using the [Gherkin Syntax](https://cucumber.io/docs/gherkin/). A **feature** file can contain a scenario or can contain many scenarios in a single **feature** file but it usually contains a list of scenarios.
 
