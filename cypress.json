@@ -1,6 +1,6 @@
 {
-  "testFiles": "**/*.feature",
-  "integrationFolder": "cypress/tests",
+  "testFiles": "tests/**/*.feature",
+  "integrationFolder": "tests",
   "fixturesFolder": false,
   "viewportHeight": 1080,
   "viewportWidth": 1920
