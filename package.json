@@ -1,10 +1,12 @@
 {
   "name": "cypress-cucumber-starter-project",
+  "description": "Starter project for UI end-to-end testing with Cypress and Cucumber using Typescript",
   "version": "1.0.0",
   "scripts": {
     "prettier": "npx prettier --write */**.{ts,js}",
     "test": "./node_modules/.bin/cypress open",
-    "test:ci": "cypress run"
+    "test:ci": "cypress run",
+    "test:clean": "rm -rf cypress/screenshots cypress/videos cypress/downloads"
   },
   "devDependencies": {
     "@cypress/browserify-preprocessor": "^3.0.2",
