@@ -8,5 +8,7 @@ module.exports = (on, config) => {
     typescript: resolve.sync('typescript', { baseDir: config.projectRoot }),
   }
 
+  require('cypress-terminal-report/src/installLogsPrinter')(on)
+
   on('file:preprocessor', cucumber(options))
 }

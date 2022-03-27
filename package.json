@@ -2,16 +2,18 @@
   "name": "cypress-cucumber-starter-project",
   "version": "1.0.0",
   "scripts": {
+    "prettier": "npx prettier --write */**.{ts,js}",
     "test": "./node_modules/.bin/cypress open",
     "test:ci": "cypress run"
   },
   "devDependencies": {
     "@cypress/browserify-preprocessor": "^3.0.2",
-    "@cypress/webpack-preprocessor": "^5.9.1",
+    "@cypress/webpack-preprocessor": "^5.11.1",
     "cypress": "^9.5.2",
-    "cypress-cucumber-preprocessor": "^4.3.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-terminal-report": "^3.4.2",
-    "typescript": "^4.4.4"
+    "prettier": "^2.6.1",
+    "typescript": "^4.6.3"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
