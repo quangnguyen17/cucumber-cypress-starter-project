@@ -1,31 +1,27 @@
 # cypress-cucumber-starter-project
 
-Starter project for UI E2E testing with [Cypress](https://www.cypress.io/) & [Cucumber](https://cucumber.io/) using [Typescript](https://www.typescriptlang.org/).
-
-Simplifying the traditional method of writing tests by breaking it down into 2 parts.
+Starter project for UI E2E test automation with [Cypress](https://www.cypress.io/) & [Cucumber](https://cucumber.io/) using [Typescript](https://www.typescriptlang.org/).
 
 1. Defining your test in the a `.feature` file. A **feature** file is an entry point to the Cucumber tests. This is a file where you will describe your tests in Descriptive language (Like English) by using the [Gherkin Syntax](https://cucumber.io/docs/gherkin/). A **feature** file can contain a scenario or can contain many scenarios in a single **feature** file but it usually contains a list of scenarios.
+
 2. After your **feature** files have been created, you can now begin to write code here that turns the phrases in your `.feature` files into concrete actions.
 
-## How to run project locally:
+## How to run project locally
 
 - Clone and `cd` into the repo, run `npm install` to install project's dependencies.
-- To run the example tests:
-  - With [Cypress](https://www.cypress.io/) GUI: `npm run cy`.
-  - For CI/CD pipeline: `npm run cy:ci`.
+- Type `npm run test` to run the example E2E tests, or `npm run test:ci` in context of the CI/CD pipeline.
 
-## Folder Structure:
+## Folder Structure
 
-- Tests (here's where all your test **.feature** files should go): `cypress/tests`.
-- Step implementations in code: `cypress/tests/common`.
-- Cypress config file: `cypress.json`.
+- Tests (here's where all your test **.feature** files should go) `tests` folder.
+- Step implementation code should go in `step-definitions` folder.
 
-## Cypress/Cucumber E2E Tests:
+## Examples of Cucumber E2E tests
 
-#### Example #1:
+#### Example #1
 
 1. Write your first scenario
-   - Create an empty file called [`Google.feature`](cypress/tests/Google.feature) in [`cypress/tests`](cypress/tests) folder with the following content:
+   - Create an empty file called [`Google.feature`](tests/Google.feature) in [`tests`](tests) folder with the following content:
 
 ```feature
 Feature: Google
@@ -44,23 +40,27 @@ Feature: Google
 
 2. Write your step definitions in code that turn your `.feature` files into actions
    - In `cypress/common` folder, this would be where all the code for parsing your `.feature` files should be.
-   - Create a [`google.ts`](cypress/tests/common/google.ts) file in the folder with the following content:
+   - Create a [`index.ts`](step-definitions/index.ts) file in the folder with the following content:
 
 ```typescript
-import { Then, And, Given } from 'cypress-cucumber-preprocessor/steps'
+import { Given, And, Then } from 'cypress-cucumber-preprocessor/steps'
 
-Given('I visit {string}', (url: string) => cy.visit(url))
+Given('I visit {string}', (url: string) => {
+  cy.visit(url)
+})
 
-And('I see a search bar', () => cy.get(`input[title="Search"]`).should('be.visible'))
+And('I see a search bar', () => {
+  cy.get(`input[title="Search"]`).should('be.visible')
+})
 
-Then('I see a Google search button', () =>
+Then('I see a Google search button', () => {
   cy.get(`input[value="Google Search"]`).should('be.visible')
-)
+})
 ```
 
 #### Example #2:
 
-[`Rivian.feature`](cypress/tests/Rivian.feature)
+[`Rivian.feature`](tests/Rivian.feature)
 
 ```feature
 Feature: Rivian
@@ -94,18 +94,34 @@ Feature: Rivian
     And I see "Rivian is developing vehicles, software, charging solutions and services designed to help increase uptime and lower operating costs while helping businesses achieve ambitious sustainability goals." text
 ```
 
-[`rivian.ts`](cypress/tests/common/rivian.ts)
+Combining with what we already have above, update [`index.ts`](step-definitions/index.ts) file with the following to add a few additional step implementations for [Rivian.feature](tests/Rivian.feature) test:
 
 ```typescript
-import { And, When, Then } from 'cypress-cucumber-preprocessor/steps'
+import { Given, And, Then, When } from 'cypress-cucumber-preprocessor/steps'
 
-When('I click on {string} link', (text: string) =>
+Given('I visit {string}', (url: string) => {
+  cy.visit(url)
+})
+
+And('I see a search bar', () => {
+  cy.get(`input[title="Search"]`).should('be.visible')
+})
+
+Then('I see a Google search button', () => {
+  cy.get(`input[value="Google Search"]`).should('be.visible')
+})
+
+When('I click on {string} link', (text: string) => {
   cy.get('[data-testid=nav-link]').contains(text).click()
-)
+})
 
-Then('I am redirected to {string} page', (route: string) => cy.url().should('include', route))
+Then('I am redirected to {string} page', (route: string) => {
+  cy.url().should('include', route)
+})
 
-And('I see {string} text', (text: string) => cy.contains(text))
+And('I see {string} text', (text: string) => {
+  cy.contains(text)
+})
 ```
 
 ## Learning Resources on Cucumber:

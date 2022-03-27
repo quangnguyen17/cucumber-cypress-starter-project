@@ -1,5 +1,5 @@
 {
-  "testFiles": "tests/**/*.feature",
+  "testFiles": "**/*.feature",
   "integrationFolder": "tests",
   "fixturesFolder": false,
   "viewportHeight": 1080,

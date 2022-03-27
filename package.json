@@ -8,7 +8,6 @@
   "devDependencies": {
     "@cypress/browserify-preprocessor": "^3.0.2",
     "@cypress/webpack-preprocessor": "^5.9.1",
-    "@types/react": "^17.0.33",
     "cypress": "^9.5.2",
     "cypress-cucumber-preprocessor": "^4.3.0",
     "cypress-terminal-report": "^3.4.2",
@@ -16,7 +15,7 @@
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
-    "commonPath": "tests/common",
+    "commonPath": "step-definitions",
     "stepDefinitions": "tests"
   }
 }
