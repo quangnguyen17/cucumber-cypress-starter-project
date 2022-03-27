@@ -13,7 +13,7 @@ Starter project for UI E2E test automation with [Cypress](https://www.cypress.io
 
 ## Folder Structure
 
-- Tests (here's where all your test **.feature** files should go) `tests` folder.
+- Tests (here's where all your test **.feature** files should go) `features` folder.
 - Step implementation code should go in `step-definitions` folder.
 
 ## Examples of Cucumber E2E tests
@@ -21,7 +21,7 @@ Starter project for UI E2E test automation with [Cypress](https://www.cypress.io
 #### Example #1
 
 1. Write your first scenario
-   - Create an empty file called [`Google.feature`](tests/Google.feature) in [`tests`](tests) folder with the following content:
+   - Create an empty file called [`Google.feature`](features/Google.feature) in [`features`](features) folder with the following content:
 
 ```feature
 Feature: Google
@@ -60,7 +60,7 @@ Then('I see a Google search button', () => {
 
 #### Example #2:
 
-[`Rivian.feature`](tests/Rivian.feature)
+Create another file called [`Rivian.feature`](features/Rivian.feature) in the [`features`](features) folder with the content bellow:
 
 ```feature
 Feature: Rivian
@@ -94,7 +94,7 @@ Feature: Rivian
     And I see "Rivian is developing vehicles, software, charging solutions and services designed to help increase uptime and lower operating costs while helping businesses achieve ambitious sustainability goals." text
 ```
 
-Combining with what we already have above, update [`index.ts`](step-definitions/index.ts) file with the following to add a few additional step implementations for [Rivian.feature](tests/Rivian.feature) test:
+By combining what we have above, update [`index.ts`](step-definitions/index.ts) file with the following to add a few additional step implementations for [`Rivian.feature`](tests/Rivian.feature) test:
 
 ```typescript
 import { Given, And, Then, When } from 'cypress-cucumber-preprocessor/steps'

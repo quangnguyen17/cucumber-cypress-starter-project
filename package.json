@@ -16,6 +16,6 @@
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
     "commonPath": "step-definitions",
-    "stepDefinitions": "tests"
+    "stepDefinitions": "features"
   }
 }

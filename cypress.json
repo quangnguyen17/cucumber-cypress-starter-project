@@ -1,6 +1,6 @@
 {
   "testFiles": "**/*.feature",
-  "integrationFolder": "tests",
+  "integrationFolder": "features",
   "fixturesFolder": false,
   "viewportHeight": 1080,
   "viewportWidth": 1920
